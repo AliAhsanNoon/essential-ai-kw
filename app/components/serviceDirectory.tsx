@@ -94,7 +94,7 @@ const [dialog, setDialog] = useState(true);
           <div className="gap-[20px] flex items-center w-full h-full hover:bg-gray-100 px-[20px] py-[10px]" onClick={handleDialog}>
             <FaArrowRight />
             <p className="text-[20px] font-bold flex items-center">
-              Helpfull Resources
+              Service Directory
             </p>
           </div>
           {!dialog ? (

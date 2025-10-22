@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen ">
       <div className="grid grid-cols-12">
-        <div className="col-span-7 flex justify-center items-center  mx-[40px] pr-[20px] h-screen">
+        <div className="col-span-7 flex justify-center items-center  ml-[40px] pr-[20px] h-screen">
           <div className="flex flex-col items-center gap-4 overflow-y-auto h-full py-[100px] w-full px-2">
             <div className="w-[100px] h-[100px] rounded-full bg-amber-300 flex justify-center items-center">
               image
