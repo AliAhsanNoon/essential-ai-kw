@@ -9,11 +9,13 @@ interface QuestionItem {
 }
 
 interface Builder {
+  icon:React.ReactNode;
   category: string;
   name: string;
-  description: string;
-  phone: string;
-  email: string;
+  description?: string;
+  address?:string
+  phone?: string;
+  email?: string;
   website: string;
   moreInfo: string;
 }
@@ -26,7 +28,7 @@ interface CardPropsData {
 export default function CardForResource({ type, data }: CardPropsData) {
   if (type === "resource" && "title" in data) {
     return (
-      <div className="max-w-[350px] h-[] bg-gray-100 p-[20px] border-1 border-gray-400 rounded-lg">
+      <div className="h-[230px] max-w-[350px] h-[] bg-[#f9f9f9] p-[20px] border-1 border-gray-400 rounded-lg">
         <div className="w-full h-full flex justify-start items-center flex-col gap-4">
           <p className="text-[20px] w-full font-bold text-gray-600 hover:underline flex justify-start items-center gap-[10px]">{data.icon}{data.title}</p>
           <div>
@@ -47,11 +49,11 @@ export default function CardForResource({ type, data }: CardPropsData) {
 
   if (type === "service" && "name" in data) {
     return (
-      <div className="w-[350px] bg-gray-100 p-[20px] border-1 border-gray-400 rounded-lg">
-        <div className="w-full h-full flex justify-center items-start flex-col gap-4">
+      <div className="h-[400px] w-[350px] bg-[#f9f9f9] p-[20px] border-1 border-gray-400 rounded-lg">
+        <div className="w-full h-full flex justify-start items-start flex-col gap-4">
           <div className="w-full flex gap-4 flex-col">
             <div className="w-[40px] h-[40px] bg-gray-200 rounded-full flex justify-center items-center">
-              <MdHome className="text-2xl" />
+              {data.icon}
             </div>
             <span className="font-semibold">{data.category}</span>
           </div>

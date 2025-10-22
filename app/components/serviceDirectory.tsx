@@ -3,19 +3,28 @@
 import React, {useState} from "react";
 import { FaArrowRight } from "react-icons/fa";
 import CardForResource from "./cardForResource";
+import { FaWarehouse } from "react-icons/fa";
+import { FaWater } from "react-icons/fa";
+import { FaTree } from "react-icons/fa6";
+import { FaBuilding } from "react-icons/fa6";
+import { FaCamera } from "react-icons/fa6";
+import { MdHome } from "react-icons/md";
 
 interface Builder {
   category: string;
   name: string;
-  description: string;
-  phone: string;
-  email: string;
+  description?: string;
+  phone?: string;
+  email?: string;
+  address?:string;
   website: string;
   moreInfo: string;
+  icon?:React.ReactNode
 }
 
 const builders: Builder[] = [
   {
+    icon:<MdHome  className="text-2xl"/>,
     category: "Home Builder",
     name: "Douglas Hill Companies, LLC",
     description: "New Construction, Home Builder",
@@ -25,56 +34,58 @@ const builders: Builder[] = [
     moreInfo: "Specializing in high-quality custom home construction and renovations."
   },
   {
-    category: "Home Builder",
-    name: "Evergreen Homes Inc.",
+    icon:<FaWarehouse  className="text-2xl"/>,
+    category: "HGarage Door Solutions",
+    name: "Garage Door Installation & Repair",
     description: "Custom Homes, Remodeling",
-    phone: "(502) 784-1123",
-    email: "contact@evergreenhomes.com",
+    phone: "(603) 628-3667",
+    address: "444 E Industrial Park Dr Unit 3, Manchester, NH 03109",
     website: "https://www.evergreenhomes.com",
     moreInfo: "Building energy-efficient and eco-friendly homes with modern design."
   },
   {
-    category: "Home Builder",
-    name: "Summit Construction Co.",
-    description: "Luxury Homes, Design-Build",
-    phone: "(207) 335-9988",
-    email: "info@summitconstructionco.com",
+    icon:<FaWater  className="text-2xl"/>,
+    category: "Water Solutions",
+    name: "Contoocook Well",
+    description: "Water Well Services",
+    phone: "(603) 428-6060",
+    address: "524 Weare Rd, Henniker, NH 03242",
     website: "https://www.summitconstructionco.com",
     moreInfo: "Providing complete design-build solutions for high-end properties."
   },
   {
-    category: "Home Builder",
-    name: "Maple Ridge Builders",
-    description: "Residential Construction, Additions",
-    phone: "(919) 455-7621",
-    email: "hello@mapleridgebuilders.com",
+    icon:<FaTree  className="text-2xl"/>,
+    category: "Landscaping",
+    name: "Busy Bee Landscaping",
+    description: "Comprehensive Landscaping Solutions",
+    phone: "(603) 669-6945",
+    email: "busybeenh@gmail.com",
     website: "https://www.mapleridgebuilders.com",
     moreInfo: "Experts in home additions, kitchen remodeling, and full builds."
   },
   {
+    icon:<FaBuilding  className="text-2xl"/>,
     category: "Home Builder",
-    name: "BlueSky Developers",
-    description: "Custom Homes, Commercial Projects",
-    phone: "(813) 904-5532",
-    email: "support@blueskydevelopers.com",
+    name: "Denali Building and Development",
+    description: "Luxury Custom Homes",
+    address:"Bedford, NH 03110",
     website: "https://www.blueskydevelopers.com",
     moreInfo: "From concept to completion — modern spaces built with precision."
   },
   {
-    category: "Home Builder",
-    name: "OakLeaf Construction",
-    description: "New Construction, Renovation",
-    phone: "(317) 268-0472",
-    email: "info@oakleafconstruction.com",
+    icon:<FaBuilding   className="text-2xl"/>,
+    category: "Home Gutters",
+    name: "The Brothers That Just Do Gutters",
+    phone: "(866) 550-3569",
     website: "https://www.oakleafconstruction.com",
     moreInfo: "Building durable, beautiful homes that stand the test of time."
   },
   {
-    category: "Home Builder",
-    name: "CedarStone Homes",
+    icon:<FaCamera className="text-2xl"/>,
+    category: "Real Estate Photography",
+    name: "S&B Connections",
     description: "Green Homes, Smart Designs",
-    phone: "(406) 712-8094",
-    email: "contact@cedarstonehomes.com",
+    phone: "(603) 867-2455",
     website: "https://www.cedarstonehomes.com",
     moreInfo: "Focused on sustainable construction and modern architecture."
   }
@@ -91,7 +102,7 @@ const [dialog, setDialog] = useState(true);
   }
   return (
     <div className="w-full   flex items-center flex-col   bg-gray-50  border-1 border-gray-200 rounded-lg cursor-pointer ">
-          <div className="gap-[20px] flex items-center w-full h-full hover:bg-gray-100 px-[20px] py-[10px]" onClick={handleDialog}>
+          <div className="gap-[20px] flex items-center w-full h-full hover:bg-[#f9f9f9] px-[20px] py-[10px]" onClick={handleDialog}>
             <FaArrowRight />
             <p className="text-[20px] font-bold flex items-center">
               Service Directory

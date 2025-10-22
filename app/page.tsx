@@ -1,15 +1,23 @@
 import Image from "next/image";
 import HelpfulResources from "./components/helpfulResources";
 import ServiceDirectory from "./components/serviceDirectory";
+import MiaImage from "../public/mia-l.png";
 
 export default function Home() {
   return (
     <div className="min-h-screen ">
       <div className="grid grid-cols-12">
         <div className="col-span-7 flex justify-center items-center  ml-[40px] pr-[20px] h-screen">
-          <div className="flex flex-col items-center gap-4 overflow-y-auto h-full py-[100px] w-full px-2">
-            <div className="w-[100px] h-[100px] rounded-full bg-amber-300 flex justify-center items-center">
-              image
+          <div className="flex flex-col items-center gap-4 overflow-y-auto h-full py-[40px] w-full px-2">
+            <div className="w-[200px] h-[200px] rounded-full flex justify-center items-center">
+              <Image
+                src={MiaImage}
+                alt="Mia Mentor"
+                width={150}
+                height={150}
+                className="profile-img"
+                style={{ margin: "25px" }}
+              />
             </div>
 
             <p className="font-bold text-[40px] mt-[20px]">
@@ -39,7 +47,7 @@ export default function Home() {
           </div>
         </div>
         <div className="col-span-5 bg-gray-200 flex justify-center items-center">
-              essential-ai-kw
+          essential-ai-kw
         </div>
       </div>
     </div>

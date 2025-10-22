@@ -25,53 +25,53 @@ const questions: QuestionItem[] = [
     icon: <MdPersonAdd size={24} />, // 👈 example icon
     items: [
       "What are my next steps?",
-      "Who do I connect with for admin support?",
-      "Who is on the ALC Hotline today?",
+      "Where's the KW office calendar?",
+      "How do I set up my Command marketing profile?",
     ],
   },
   {
     title: "Finding Essential Documents",
     icon: <CgFileDocument size={24} />,
     items: [
-      "Where can I find upcoming training sessions?",
-      "How do I register for a workshop?",
-      "Is there online material available for new agents?",
+      "Where can I find buyer and seller contracts?",
+      "What forms are needed for offers and disclosures?",
+      "How do I access closing documents?",
     ],
   },
   {
     title: "Connecting with the Right People",
     icon: <GrGroup size={24} />,
     items: [
-      "Who handles our marketing materials?",
-      "Where can I get help creating property flyers?",
-      "How can I access social media templates?",
+      "Who can mentor me in the office?",
+      "Who do I connect with for admin support?",
+      "Who is on the ALC Hotline today?",
     ],
   },
   {
     title: "Setting Up Technology and Tools",
     icon: <MdComputer size={24} />,
     items: [
-      "How do I log into the CRM system?",
-      "Who can help me with tech setup?",
-      "Where can I find tutorials for company software?",
+      "How do I set up my accounts?",
+      "How do I setup my KW command website?",
+      "What tools should I use for marketing?",
+    ],
+  },
+  {
+    title: "Getting the Education You Need",
+    icon: <FaGraduationCap size={24} />,
+    items: [
+      "What events and classes are upcoming?",
+      "How do I get information on continuing education?",
+      "How do I handle my first transaction?",
     ],
   },
   {
     title: "Working with buyers and sellers",
-    icon: <FaGraduationCap size={24} />,
-    items: [
-      "Where do I submit my completed contracts?",
-      "Who reviews compliance for listings?",
-      "How do I get help with transaction issues?",
-    ],
-  },
-  {
-    title: "Office Operations and Policies",
     icon: <MdBusiness size={24} />,
     items: [
-      "What are the office hours?",
-      "How do I reserve a conference room?",
-      "Where can I find the company policies?",
+      "Understanding buyers and sellers goals and timelines?",
+      "What should I do meeting buyers and sellers for the first time?",
+      "Tips on pricing stategies?",
     ],
   },
 ];
@@ -85,7 +85,7 @@ export default function HelpfulResources() {
   return (
     <div className="w-full   flex items-center flex-col   bg-gray-50  border-1 border-gray-200 rounded-lg cursor-pointer ">
       <div
-        className="gap-[20px] flex items-center w-full h-full hover:bg-gray-100 px-[20px] py-[10px]"
+        className="gap-[20px] flex items-center w-full h-full hover:bg-[#f9f9f9] px-[20px] py-[10px]"
         onClick={handleDialog}
       >
         <FaArrowRight />
