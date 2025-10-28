@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import HelpfulResources from "@/app/components/HelpfulResources";
-import ServiceDirectory from "./components/ServiceDirectory";
-import WizardUI from "./components/WizardUI";
-import MiaImage from "../public/mia-l.png";
+import ServiceDirectory from "@/app/components/ServiceDirectory";
+import WizardUI from "@/app/components/WizardUI";
+import MiaImage from "@/public/mia-l.png";
 import { useGlobalContext } from "@/lib/ContextProvider";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
