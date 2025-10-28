@@ -20,7 +20,7 @@ interface WizardUIProps {
 }
 
 const buildPromptFromFormData = (data: any) => {
-  let prompt = "You are Mia Mentor, a helpful AI assistant for new Keller Williams real estate agents. The agent has provided the following information:\n\n";
+  let prompt = "You are Mia Mentor,  a  helpful AI assistant for new Keller Williams real estate agents. The agent has provided the following information:\n\n";
   
   Object.keys(data).forEach((key) => {
     if (data[key]) {

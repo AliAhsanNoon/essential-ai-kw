@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import WizardUi from "./components/wizardUi";
 import HelpfulResources from "./components/helpfulResources";
 import ServiceDirectory from "./components/serviceDirectory";
-import WizardUI from "./components/wizardUi";
 import MiaImage from "../public/mia-l.png";
 import { useGlobalContext } from "@/lib/ContextProvider";
 import { useState, useEffect } from "react";
@@ -280,7 +280,7 @@ export default function Home() {
           {showChat ? (
             <div id="customgpt_chat" className="w-full h-[600px] lg:h-full" style={{ display: 'block', minHeight: '600px' }}></div>
           ) : (
-            <WizardUI
+            <WizardUi
               onComplete={(data) => console.log("Wizard completed:", data)}
               onLoadChat={(prompt) => {
                 setChatQuestion(prompt);
