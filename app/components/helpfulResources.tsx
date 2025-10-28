@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useCallback } from "react";
-import CardForResource from "./CardForResource";
+import CardForResource from "./cardForResource";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";

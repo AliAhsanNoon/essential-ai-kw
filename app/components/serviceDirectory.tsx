@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import CardForResource from "./CardForResource";
+import CardForResource from "./cardForResource";
 import { FaWarehouse } from "react-icons/fa";
 import { FaWater } from "react-icons/fa";
 import { FaTree } from "react-icons/fa6";

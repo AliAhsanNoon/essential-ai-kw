@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import HelpfulResources from "./components/HelpfulResources";
-import ServiceDirectory from "./components/ServiceDirectory";
-import WizardUI from "./components/WizardUI";
+import HelpfulResources from "./components/helpfulResources";
+import ServiceDirectory from "./components/serviceDirectory";
+import WizardUI from "./components/wizardUI";
 import MiaImage from "../public/mia-l.png";
 import { useGlobalContext } from "@/lib/ContextProvider";
 import { useState, useEffect } from "react";
