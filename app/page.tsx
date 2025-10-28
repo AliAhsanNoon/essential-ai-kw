@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 import { LogOut, User } from "lucide-react";
 
 export default function Home() {
-  console.log("hello")
   const { setGlobalString } = useGlobalContext();
   const [user, setUser] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
