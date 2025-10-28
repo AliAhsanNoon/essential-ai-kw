@@ -3,7 +3,7 @@
 import Image from "next/image";
 import HelpfulResources from "./components/helpfulResources";
 import ServiceDirectory from "./components/serviceDirectory";
-import WizardUI from "./components/wizardUI";
+import WizardUI from "./components/wizardUi";
 import MiaImage from "../public/mia-l.png";
 import { useGlobalContext } from "@/lib/ContextProvider";
 import { useState, useEffect } from "react";
