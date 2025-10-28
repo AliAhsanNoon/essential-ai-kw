@@ -32,7 +32,7 @@ const buildPromptFromFormData = (data: any) => {
   return prompt;
 };
 
-export default function WizardUI({ onComplete, node, onLoadChat }: WizardUIProps) {
+export default function WizardUi({ onComplete, node, onLoadChat }: WizardUIProps) {
   const [currentStep, setCurrentStep] = useState<
     WizardStep | Wizard | null
   >(null);
