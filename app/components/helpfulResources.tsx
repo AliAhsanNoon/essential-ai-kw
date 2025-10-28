@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useCallback } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import CardForResource from "./cardForResource";
+import CardForResource from "./CardForResource";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { motion, AnimatePresence } from "framer-motion";
+
 import {
   MdPersonAdd,
-  MdSchool,
   MdComputer,
-  MdAssignment,
   MdBusiness,
 } from "react-icons/md";
 import { GrGroup } from "react-icons/gr";
@@ -22,7 +23,7 @@ interface QuestionItem {
 const questions: QuestionItem[] = [
   {
     title: "New Agent Onboarding",
-    icon: <MdPersonAdd size={24} />, // 👈 example icon
+    icon: <MdPersonAdd size={24} />, 
     items: [
       "What are my next steps?",
       "Where's the KW office calendar?",
@@ -76,7 +77,11 @@ const questions: QuestionItem[] = [
   },
 ];
 
-export default function HelpfulResources() {
+interface HelpfulResourcesProps {
+  onQuestionClick?: (question: string) => void;
+}
+
+export default function HelpfulResources({ onQuestionClick }: HelpfulResourcesProps) {
   const [dialog, setDialog] = useState(true);
 
   const handleDialog = useCallback(() => {
@@ -85,23 +90,38 @@ export default function HelpfulResources() {
   return (
     <div className="w-full   flex items-center flex-col   bg-gray-50  border-1 border-gray-200 rounded-lg cursor-pointer ">
       <div
-        className="gap-[20px] flex items-center w-full h-full hover:bg-[#f9f9f9] px-[20px] py-[10px]"
+        className="gap-[20px] flex items-center w-full h-full hover:bg-[#e5e5e5] px-[20px] py-[10px]"
         onClick={handleDialog}
       >
-        <FaArrowRight />
+        {dialog ? (
+          <MdKeyboardArrowRight className="text-[30px]" />
+        ) : (
+          <MdKeyboardArrowDown className="text-[30px]" />
+        )}
         <p className="text-[20px] font-bold flex items-center">
           Helpfull Resources
         </p>
       </div>
-      {!dialog ? (
-        <div className="w-full flex justify-center items-center flex-wrap gap-[20px] pb-[50px] mt-[20px]">
-          {questions.map((data, index) => {
-            return <CardForResource key={index} data={data} type="resource" />;
-          })}
-        </div>
-      ) : (
-        ""
-      )}
+      <AnimatePresence>
+        {!dialog && (
+          <motion.div
+            className="w-full flex justify-center items-center flex-wrap gap-[20px] pb-[50px] mt-[20px]"
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{
+              duration: 0.4,
+              ease: "easeOut",
+            }}
+          >
+            {questions.map((data, index) => {
+              return (
+                <CardForResource key={index} data={data} type="resource" onQuestionClick={onQuestionClick} />
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

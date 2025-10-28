@@ -120,3 +120,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* CustomGPT Chat Box Reset Button - Center Icon */
+.cgptcb-embed-chat-box-reset {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.cgptcb-embed-chat-box-reset svg {
+  display: block !important;
+  margin: auto !important;
+}
+
+/* Position tooltip on the left instead of top */
+.cgptcb-embed-chat-box-reset span {
+  top: 70% !important;
+  left: auto !important;
+  right: calc(100% + 0.5rem) !important;
+  transform: translateY(-50%) !important;
+  font-size: 12px !important;
+}
+
+.cgptcb-embed-chat-box-header {
+
+}
