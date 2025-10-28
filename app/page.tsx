@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import WizardUi from "./components/wizardUi1";
+import WizardUi from "./components/wizardUi";
 import HelpfulResources from "./components/helpfulResources";
 import ServiceDirectory from "./components/serviceDirectory";
 import MiaImage from "../public/mia-l.png";
